@@ -20,8 +20,8 @@ block content
     else
         p Do you really want to delete this Book?
 
-        form(method='post', action='')
+        form(method='post' action='')
             div.form-group
                 input#bookid.form-control(type='hidden',
-                 name='authorid', required='true', value=book._id)
+                 name='bookid', required='true', value=book._id)
             button.btn.btn-primary(type='submit') Delete
