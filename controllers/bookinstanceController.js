@@ -72,7 +72,7 @@ exports.bookinstance_create_post = [
       book: req.body.book,
       imprint: req.body.imprint,
       status: req.body.status,
-      due_back: req.body.due_back,
+      due_back: req.body.due_back == "" ? undefined : req.body.due_back,
     });
 
     if (!errors.isEmpty()) {
@@ -130,8 +130,8 @@ exports.bookinstance_delete_post = (req, res, next) => {
 };
 
 // Display BookInstance update form on GET.
-exports.bookinstance_update_get = (req, res) => {
-  res.send("NOT IMPLEMENTED: BookInstance update GET");
+exports.bookinstance_update_get = (req, res, next) => {
+  async.parallel({});
 };
 
 // Handle bookinstance update on POST.
